@@ -30,7 +30,6 @@ class App extends React.Component {
 					</div>
 				) : (
 					movies.map((movie) => {
-						console.log(movie);
 						return (
 							<Movie
 								key={movie.id}
