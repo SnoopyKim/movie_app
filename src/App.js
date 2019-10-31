@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class App extends React.Component {
 	state = {
@@ -7,17 +7,25 @@ class App extends React.Component {
 	};
 
 	add = () => {
-		this.setState((current) => {
-			count: current.count + 1;
-		});
+		this.setState((current) => ({ count: current.count + 1 }));
 	};
 	minus = () => {
-		this.setState((current) => {
-			count: current.count - 1;
-		});
+		this.setState((current) => ({ count: current.count - 1 }));
 	};
 
+	// function in React.Component
+	componentDidMount() {
+		console.log("component rendered");
+	}
+	componentDidUpdate() {
+		console.log("I just updated");
+	}
+	componentWillUnmount() {
+		console.log("Goodbye");
+	}
+
 	render() {
+		console.log("Im rendering");
 		return (
 			<div>
 				<h1>The number is: {this.state.count}</h1>
